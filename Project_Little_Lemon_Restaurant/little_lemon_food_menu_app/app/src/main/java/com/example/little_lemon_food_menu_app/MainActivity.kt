@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -52,7 +53,7 @@ fun MainComponent() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start,
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .background(Color(0xFF495E57))
     ) {
         Text(
@@ -67,22 +68,23 @@ fun MainComponent() {
             color = Color(0xFFFFFFFF),
             modifier = Modifier.padding(start = 20.dp)
         )
-        Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.Center) {
-            Button(
-                onClick = { /*TODO*/ },
-                border = BorderStroke(1.dp, Color.Red),
-                shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Gray,
-                    contentColor = Color.Black
-                )
-            ) {
-                Text(text = stringResource(id = R.string.Order))
-            }
+        Row(Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.Center) {
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_foreground),
                 contentDescription = "",
                 Modifier.height(100.dp))
+        }
+
+        Button(
+            onClick = { /*TODO*/ },
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.padding(20.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFFF4CE14),
+                contentColor = Color.Black
+            )
+        ) {
+            Text(text = stringResource(id = R.string.Order))
         }
     }
 }
